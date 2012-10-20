@@ -114,7 +114,7 @@ class action_plugin_simpleperms extends DokuWiki_Action_Plugin
             return;
         
         # don't add perms if not author
-        if (!$this->_user_is_creator())
+        if (!$this->_user_is_creator() && $this->_page_exists())
             return;
         
         # Check if the simpleperm value was given in the request
