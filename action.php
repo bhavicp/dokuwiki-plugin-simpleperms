@@ -142,8 +142,8 @@ class action_plugin_simpleperms extends DokuWiki_Action_Plugin
         # Its a private page and user not author, block access
         if ($this->_private() && !$this->_user_is_creator()) {
             $event->preventDefault();
-            echo "<h1 class='sectionedit1'><a name='private' id='private'><img width='100px' height='100px' src='http://kinlane-productions.s3.amazonaws.com/api-evangelist/error.png'><strong> This is a private page</strong></a></h1>";
-            
+            echo '<h1 class="sectionedit1"><a name="this_topic_does_not_exist_yet" id="this_topic_does_not_exist_yet">This topic does not exist yet</a></h1>';
+			echo '<div class="level1"><p>You\'ve followed a link to a topic that doesn\'t exist yet. If permissions allow, you may create it by using the <code>Create this page</code> button.</p></div>';
         }
         
     }
