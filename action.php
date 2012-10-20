@@ -110,7 +110,7 @@ class action_plugin_simpleperms extends DokuWiki_Action_Plugin
         
         
         # Check it is a save operation
-        if ($ACT != "save")
+        if (($ACT != "save") && !isset($_REQUEST['simpleperm']))
             return;
         
         # don't add perms if not author
@@ -287,8 +287,8 @@ EOF;
 		<div class="summary" style="margin-right: 10px;">
 			<span>Permissions: <select name="simpleperm">
 				<option value="-1"$private_selected>Private</option>
-				<option value="0"$public_r_selected>Readable</option>
-				<option value="1"$public_rw_selected>Writeable</option>
+				<option value="0"$public_r_selected> Public Readable </option>
+				<option value="1"$public_rw_selected> Writeable </option>
 			</select></span>
 		</div>
 EOF;
